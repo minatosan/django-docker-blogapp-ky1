@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ja">
+ 
+<head>
+   {% include  'mysites/snippets/head.html' %}
+</head>
+ 
+<body>
+  {%include  'mysites/snippets/header.html' %}
+  {% include 'mysites/snippets/messages.html' %}
+    {% block content %}
+    {% endblock %}
+  {% include 'mysites/snippets/footer.html' %}
+    
+</body>
+ 
+</html>

@@ -1,0 +1,7 @@
+Django==3.2
+uwsgi==2.0.17
+mysqlclient
+PyYAML==5.4.1
+requests
+payjp
+Pillow

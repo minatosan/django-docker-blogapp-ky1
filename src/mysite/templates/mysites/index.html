@@ -1,0 +1,54 @@
+{% extends 'mysites/base.html' %}
+ 
+{% block content %}
+ 
+<div class="container">
+       <div class="p-4 p-md-5 mb-4 rounded bg-warning">
+        <div class="col-md-6 px-0">
+            <h1 class="display-4 font-italic">Django講座</h1>
+            <p class="lead my-3">文章をかこう</p>
+            <p class="lead mb-0">
+                <a href="#" class="font-weight-bold">続きを読む</a>
+            </p>
+        </div>
+    </div>
+    <div class="row mb-2">
+      {% for obj in ranks %}
+        <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row 
+            mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary">Django</strong>
+                    <h3 class="mb-0">{{obj.title}}</h3>
+                    <div class="mb-1 text-muted">{{obj.created_at}}</div>
+                    <p class="card-text mb-auto">{{obj.text}}</p>
+                    <a href="/blog/{{obj.id}}/" class="stretched-link">続きを読む</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="col-md-8">
+        {% for obj in articles %}
+          <div class="blog-post">
+                <h2 class="blog-post-title">{{obj.title}}</h2>
+                <p class="blog-post-meta">{{obj.created_at}}by
+                    <a href="#">{{obj.author}}</a>
+                  <p>{{obj.text}}</p>
+                </p>
+                <a href="/blog/{{obj.id}}" >続きはこちら</a>
+          </div>
+          <hr>
+        {% endfor %}
+      </div>
+        {% include 'mysites/snippets/sidebar.html' %}
+          <nav class="blog-pagination">
+            <a href="/blog/">ブログ一覧はこちら</a>
+          </nav>
+         
+    </div>
+</div>
+ 
+ 
+
+ 
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'mysites/base.html' %}
+ 
+{% block content %}
+ 
+<div class="container">
+    決済デモページ
+    <form method="POST">
+      {% csrf_token %}
+      <script type="text/javascript"
+      src="https://checkout.pay.jp"
+      class="payjp-button"
+      data-key="{{public_key}}">
+    </script>
+    </form>
+
+
+        {% include 'mysites/snippets/sidebar.html' %}
+          <nav class="blog-pagination">
+            <a href="/blog/">ブログ一覧はこちら</a>
+          </nav>
+         
+    </div>
+</div>
+ 
+ 
+
+ 
+{% endblock %}
